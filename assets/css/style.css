@@ -7521,3 +7521,29 @@ textarea.form-control {
   right: 0;
   color: #848e9f;
 }/*# sourceMappingURL=style.css.map */
+
+/* Consent form */
+
+.consent-forms-container{
+  background-color: rgb(229, 227, 227);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 80px 0;
+}
+
+.consent-forms{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  height: 100%;
+  gap: 20px;
+}
+
+.consent-forms img{
+  width: 50px;
+  height: auto;
+}
