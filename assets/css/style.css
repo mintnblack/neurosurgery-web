@@ -4905,7 +4905,7 @@ input[type=radio] {
   left: -10px;
   width: 143px;
   height: 95px;
-  background-image: url(../images/icons/text-shape.png);
+  background-image: url(../images/icons/text-shape.jpg);
 }
 .testimonials__rating .total__rate {
   font-family: "Quicksand", sans-serif;
@@ -5492,6 +5492,11 @@ input[type=radio] {
   margin-right: 10px;
   background-color: #1ebaae;
 }
+
+.icon-phone {
+  background-color: rgb(45, 73, 144) !important;
+}
+
 .contact-info .contact-box .btn__white.btn__outlined {
   height: 42px;
   border: 1px solid rgba(255, 255, 255, 0.25);
