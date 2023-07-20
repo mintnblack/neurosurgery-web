@@ -40,7 +40,7 @@
     }
 
     .slide__title {
-        font-size: 75px;
+        font-size: 60px;
         line-height: 1.1;
         margin-bottom: 25px;
     }
@@ -195,7 +195,7 @@
 /* Large Size Screens */
 @include lg-screens {
     .slider .slide__title {
-        font-size: 65px;
+        font-size: 55px;
     }
 }
 
@@ -203,7 +203,7 @@
 @include md-screens {
     .slider {
         .slide__title {
-            font-size: 50px;
+            font-size: 40px;
             margin-bottom: 10px;
         }
     }
