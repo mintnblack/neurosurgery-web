@@ -1282,6 +1282,8 @@
     .header {
         .navbar-brand img {
             max-width: 120px;
+            height: 90px !important;
+            object-fit: contain;
         }
 
         .action__btn-login span {

@@ -1,0 +1,7 @@
+
+/* Home page */
+
+.video-banner img{
+    /* border: 1px solid black; */
+    filter: drop-shadow(0 0px 2px #919EAB);
+}
