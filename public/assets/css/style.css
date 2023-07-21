@@ -7366,6 +7366,7 @@ textarea.form-control {
   border-radius: 10px;
   background-color: var(--main-background-color);
   transition: all 0.3s ease;
+  height: 350px;
 }
 .process-item:before {
   content: "";
