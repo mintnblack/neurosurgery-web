@@ -7367,6 +7367,7 @@ textarea.form-control {
 /*-------------------------
     Work Process
 -------------------------*/
+
 .process-item {
   position: relative;
   z-index: 2;
@@ -7374,7 +7375,7 @@ textarea.form-control {
   border-radius: 10px;
   background-color: var(--main-background-color);
   transition: all 0.3s ease;
-  height: 350px;
+  height: 360px;
 }
 .process-item:before {
   content: "";
@@ -7484,6 +7485,11 @@ textarea.form-control {
     max-width: 90px;
     margin-bottom: 10px;
   }
+
+  .process-item{
+    margin-bottom: 25px;
+    height: 300px;
+  }
 }
 /* Mobile Phones and tablets */
 @media (min-width: 320px) and (max-width: 767px) {
@@ -7507,6 +7513,13 @@ textarea.form-control {
   }
   .work-process .cta .cta__title {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 575px){
+  .process-item{
+    margin-bottom: 20px;
+    height: 240px;
   }
 }
 /*-----------------------
