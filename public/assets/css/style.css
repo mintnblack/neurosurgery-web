@@ -4212,6 +4212,7 @@ input[type=radio] {
   background-color: var(--main-background-color);
   box-shadow: 0px 5px 83px 0px rgba(9, 29, 62, 0.08);
   transition: all 0.3s linear;
+  height: 210px;
 }
 .feature-item .feature__img {
   position: absolute;
