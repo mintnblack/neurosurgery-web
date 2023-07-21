@@ -324,3 +324,29 @@ $(function () {
 
     // get current web page url
     const url = window.location.href;
+    var urlObject = new URL(url);
+
+    navLink.forEach((link)=>{
+        link.classList.remove("active")
+    })
+
+    if(urlObject.pathname.includes("index.html")){
+        navLink[0].classList.add("active")
+    }
+    else if(urlObject.pathname.includes("about-us.html")){
+        navLink[1].classList.add("active")
+    }
+    else if(urlObject.pathname.includes("blog.html")){
+        navLink[2].classList.add("active")
+    }
+    else if(urlObject.pathname.includes("consent-forms.html")){
+        navLink[3].classList.add("active")
+    }
+    else if(urlObject.pathname.includes("contact-us.html")){
+        navLink[4].classList.add("active")
+    }else{
+        navLink.forEach((link)=>{
+            link.classList.remove("active")
+        })
+    }
+
