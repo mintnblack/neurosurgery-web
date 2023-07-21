@@ -317,3 +317,10 @@ $(function () {
     // [Zoom Effect on Hovering] Find it in shop-single-product.html
     $(".zoomin").imagezoomsl();
 });
+
+    /*==========  Select active page link in navigation bar  ==========*/
+
+    const navLink =document.querySelectorAll('.nav__item-link');
+
+    // get current web page url
+    const url = window.location.href;
