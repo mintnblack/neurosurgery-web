@@ -54,3 +54,22 @@
     width: 50px;
     height: auto;
   }
+
+  /* Background */
+
+  .gradient-bg{
+    background: rgb(220,20,60);
+    background: linear-gradient(142deg, rgba(220,20,60,1) 0%, rgba(40,59,106,1) 40%, rgba(0,0,0,1) 93%);
+  }
+
+  @media (max-width: 1200px) {
+
+    .about-title{
+      display: none !important;
+    }
+
+    .about-section{
+      padding-top: 80px !important;
+    }
+
+  }
