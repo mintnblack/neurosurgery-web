@@ -342,9 +342,13 @@ $(function () {
     else if(urlObject.pathname.includes("consent-forms.html")){
         navLink[3].classList.add("active")
     }
-    else if(urlObject.pathname.includes("contact-us.html")){
+    else if(urlObject.pathname.includes("feedbacks.html")){
         navLink[4].classList.add("active")
-    }else{
+    }
+    else if(urlObject.pathname.includes("contact-us.html")){
+        navLink[5].classList.add("active")
+    }
+    else{
         navLink.forEach((link)=>{
             link.classList.remove("active")
         })
