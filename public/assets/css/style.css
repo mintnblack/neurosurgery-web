@@ -4915,7 +4915,7 @@ input[type=radio] {
   left: -10px;
   width: 143px;
   height: 95px;
-  background-image: url(../images/icons/text-shape.png);
+  /* background-image: url(../images/icons/text-shape.png); */
 }
 .testimonials__rating .total__rate {
   font-family: "Quicksand", sans-serif;
