@@ -4226,6 +4226,8 @@ input[type=radio] {
 .feature-item:hover {
   background-color: #f3e5e8;
   transform: scale(1.05); 
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
 }
 
 .feature-item .feature__img {
