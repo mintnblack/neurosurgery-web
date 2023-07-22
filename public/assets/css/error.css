@@ -1,0 +1,72 @@
+.errorPage{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgb(220,20,60);
+    background: linear-gradient(142deg, rgba(220,20,60,1) 0%, rgba(40,59,106,1) 40%, rgba(0,0,0,1) 93%);
+}
+
+.errorPageContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.errorPageContent{
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.errorPageContent h1{
+    font-size: 10rem;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+}
+
+.errorPageContent p{
+    color: #f3efef;
+    font-size: 20px;
+    text-align: center;
+}
+
+.errorPageContent button{
+    border-radius: 50px !important;
+    text-transform: capitalize;
+    position: relative;
+    z-index: 1;
+    font-size: 15px;
+    font-weight: 700;
+    min-width: 170px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 15px;
+    border: 0;
+    overflow: hidden;
+    transition: all 0.3s linear;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+
+    .errorPageContent h1{
+        font-size: 8rem;
+    }
+    .errorPageContent p{
+        font-size: 15px;
+    }
+    .errorPageContent button{
+        font-size: 12px;
+        min-width: 120px;
+        height: 40px;
+    }
+}
