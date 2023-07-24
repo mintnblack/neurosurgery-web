@@ -4653,6 +4653,7 @@ input[type=radio] {
   border-radius: 6px;
 }
 .member .member__img img {
+  width: 100%;
   transition: all 0.9s ease;
 }
 .member .member__info {
@@ -6165,7 +6166,7 @@ textarea.form-control {
   display: none;
 }
 .widget-member .member {
-  z-index: 3;
+  /* z-index: 3; */
   box-shadow: 0px 5px 83px 0px rgba(9, 29, 62, 0.15);
 }
 .widget-member .member:before {
@@ -6296,9 +6297,9 @@ textarea.form-control {
   .sidebar.has-marign-left {
     margin-left: 40px;
   }
-  .widget-member.shifted-top {
+  /* .widget-member.shifted-top {
     margin-top: -450px;
-  }
+  } */
 }
 @media (min-width: 320px) and (max-width: 992px) {
   .widget {
