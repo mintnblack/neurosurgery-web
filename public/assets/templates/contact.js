@@ -1,4 +1,5 @@
 
+import { BASE_URL } from "../utils/applicationConstants.js";
 
 const contactFormSubmitBtn = document.getElementById("contactFormSubmitBtn");
 
@@ -15,7 +16,7 @@ contactFormSubmitBtn.addEventListener("click", async()=>{
         message
     }
 
-    const response = await fetch("https://nslondon.onrender.com/contact/", {
+    const response = await fetch(`${BASE_URL}/contact/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

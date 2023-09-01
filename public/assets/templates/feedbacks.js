@@ -1,4 +1,5 @@
 
+import { BASE_URL } from "../utils/applicationConstants.js";
 
 const stars = document.querySelectorAll("#stars i");
 
@@ -38,7 +39,7 @@ feedbackSubmit.addEventListener("click", async (e) => {
 
   // post api using fetch
 
-  const response = await fetch("https://nslondon.onrender.com/feedback/", {
+  const response = await fetch(`${BASE_URL}/feedback/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -51,7 +52,7 @@ feedbackSubmit.addEventListener("click", async (e) => {
 });
 
 const fetchFeedbacks = async () => {
-  const response  = await fetch("https://nslondon.onrender.com/feedback/");
+  const response  = await fetch(`${BASE_URL}/feedback/`);
   const data = await response.json();
 
   console.log(data);
