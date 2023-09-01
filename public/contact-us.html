@@ -124,41 +124,32 @@
                   <div class="col-sm-6 col-md-6 col-lg-6">
                     <div class="form-group">
                       <i class="icon-user form-group-icon"></i>
-                      <input type="text" class="form-control" placeholder="Name" id="contact-name" name="contact-name"
-                        required>
+                      <input type="text" class="form-control" placeholder="Name" id="contact-name" name="contact-name">
                     </div>
                   </div><!-- /.col-lg-6 -->
-                  <div class="col-sm-6 col-md-6 col-lg-6">
-                    <div class="form-group">
-                      <i class="icon-email form-group-icon"></i>
-                      <input type="email" class="form-control" placeholder="Email" id="contact-email"
-                        name="contact-email" required>
-                    </div>
-                  </div><!-- /.col-lg-6 -->
+                 
                   <div class="col-sm-6 col-md-6 col-lg-6">
                     <div class="form-group">
                       <i class="icon-phone form-group-icon"></i>
                       <input type="text" class="form-control" placeholder="Phone" id="contact-Phone"
-                        name="contact-phone" required>
+                        name="contact-phone">
                     </div>
                   </div><!-- /.col-lg-6 -->
-                  <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="col-sm-12">
                     <div class="form-group">
-                      <i class="icon-news form-group-icon"></i>
-                      <select class="form-control">
-                        <option value="0">Subject</option>
-                        <option value="1">Subject 1</option>
-                        <option value="2">Subject 1</option>
-                      </select>
+                      <i class="icon-email form-group-icon"></i>
+                      <input type="email" class="form-control" placeholder="Email" id="contact-email"
+                        name="contact-email">
                     </div>
-                  </div><!-- /.col-lg-6 -->
+                  </div><!-- /.col-lg-12 -->
+                  <!-- /.col-lg-6 -->
                   <div class="col-12">
                     <div class="form-group">
                       <i class="icon-alert form-group-icon"></i>
                       <textarea class="form-control" placeholder="Message" id="contact-message"
                         name="contact-message"></textarea>
                     </div>
-                    <button type="submit" class="btn btn__secondary btn__rounded btn__block btn__xhight mt-10">
+                    <button type="submit" id="contactFormSubmitBtn" class="btn btn__secondary btn__rounded btn__block btn__xhight mt-10">
                       <span>Submit Request</span> <i class="icon-arrow-right"></i>
                     </button>
                     <div class="contact-result"></div>
@@ -245,6 +236,7 @@
   <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/templates/contact.js"></script>
 </body>
 
 </html>
