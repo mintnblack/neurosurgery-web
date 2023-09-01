@@ -1,0 +1,30 @@
+
+.appointment_dropdown{
+    position: relative;
+  display: block;
+}
+
+.appointment_dropdown_content{
+  display: none;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #f6f6f6;
+  position: absolute;
+  background-color: #fff;
+  z-index: 50;
+}
+
+.appointment_dropdown_content p{
+  padding: 12px 16px;
+  margin: 0;
+}
+
+
+.appointment_dropdown_content p:hover{
+    background-color: #f6f6f6;
+    cursor: pointer;
+}
+
+.appointment_dropdown:hover .appointment_dropdown_content{
+    display: block;
+}

@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
   <link rel="stylesheet" href="assets/css/libraries.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/myStyles/appointment.css">
 </head>
 
 <body>
@@ -133,52 +134,60 @@
                     </p>
                   </div>
                   <div class="col-sm-12">
-                    <div class="form-group">
-                      <i class="icon-widget form-group-icon"></i>
-                      <select class="form-control">
-                        <option value="0">Choose Clinic</option>
-                        <option value="1">Pathology Clinic</option>
-                        <option value="2">Pathology Clinic</option>
-                      </select>
+                    <div class="appointment_dropdown">
+                      <div class="form-group">
+                        <i class="icon-widget form-group-icon"></i>
+                        <p class="form-control" style="line-height: 60px; margin: 0;" id="appointment_clinic">fjjadfnklanfkjasf</p>
+                        <span style="visibility: hidden;" id="appointment_clinic_id"></span>
+                        <div class="appointment_dropdown_content" id="appointment_dropdown_content">
+                        </div>
+                      </div>
                     </div>
                   </div><!-- /.col-lg-6 -->
-                  
+                  <div class="col-12">
+                    <div class="form-group">
+                        <i class="icon-user form-group-icon"></i>
+                        <input type="text" class="form-control" placeholder="Name" id="appointment_user"
+                        name="appointment-user" required>
+                    </div>
+                </div><!-- /.col-lg-12 -->
                   <!-- /.col-lg-6 -->
                   <div class="col-sm-6 col-md-6 col-lg-6">
                     <div class="form-group">
-                      <i class="icon-news form-group-icon"></i>
-                      <input type="text" class="form-control" placeholder="Name" id="contact-name" name="contact-name"
+                      <i class="icon-email form-group-icon"></i>
+                      <input type="email" class="form-control" placeholder="Email" id="appointment_email" name="appointment-email"
                         required>
                     </div>
                   </div><!-- /.col-lg-6 -->
                   <div class="col-sm-6 col-md-6 col-lg-6">
                     <div class="form-group">
-                      <i class="icon-email form-group-icon"></i>
-                      <input type="email" class="form-control" placeholder="Email" id="contact-email"
-                        name="contact-email" required>
+                      <i class="icon-phone form-group-icon"></i>
+                      <input type="text" class="form-control" placeholder="Phone" id="appointment_phone"
+                        name="appointment-phone" required>
                     </div>
                   </div><!-- /.col-lg-6 -->
                   <div class="col-sm-4 col-md-4 col-lg-4">
                     <div class="form-group">
                       <i class="icon-phone form-group-icon"></i>
-                      <input type="text" class="form-control" placeholder="Phone" id="contact-Phone"
-                        name="contact-phone" required>
+                      <input type="number" class="form-control" placeholder="Age" id="appointment_age"
+                        name="appointment-age" required>
                     </div>
                   </div><!-- /.col-lg-4 -->
                   <div class="col-sm-4 col-md-4 col-lg-4">
                     <div class="form-group form-group-date">
                       <i class="icon-calendar form-group-icon"></i>
-                      <input type="date" class="form-control" id="contact-date" name="contact-date" required>
+                      <input type="date" class="form-control" id="appointment_date" name="appointment-date" required>
                     </div>
                   </div><!-- /.col-lg-4 -->
                   <div class="col-sm-4 col-md-4 col-lg-4">
-                    <div class="form-group form-group-date">
-                      <i class="icon-clock form-group-icon"></i>
-                      <input type="time" class="form-control" id="contact-time" name="contact-time" required>
+                    <div class="form-group">
+                      <i class="icon-male form-group-icon"></i>
+                      <input type="text" class="form-control" placeholder="Gender" id="appointment_gender"
+                        name="appointment-gender" required>
                     </div>
                   </div><!-- /.col-lg-4 -->
                   <div class="col-12">
-                    <button type="submit" class="btn btn__secondary btn__rounded btn__block btn__xhight mt-10">
+                    <button id="bookAppointmentBtn" type="submit" class="btn btn__secondary btn__rounded btn__block btn__xhight mt-10">
                       <span>Book Appointment</span> <i class="icon-arrow-right"></i>
                     </button>
                     <div class="contact-result"></div>
