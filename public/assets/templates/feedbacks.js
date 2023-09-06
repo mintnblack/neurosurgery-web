@@ -34,7 +34,8 @@ feedbackSubmit.addEventListener("click", async (e) => {
     "email": email,
     "feedback": feedback,
     "name": name,
-    "phone": phone
+    "phone": phone,
+    "rating": rating.toString()
   }
 
   // post api using fetch
@@ -48,6 +49,9 @@ feedbackSubmit.addEventListener("click", async (e) => {
   });
 
   console.log("response : ",response);
+  if(response.status === 200){
+    window.location.reload();
+  }
   
 });
 
