@@ -74,5 +74,8 @@ bookAppointmentBtn.addEventListener("click", async(e) => {
   });
 
   console.log(response)
+  if( response.status === 200) {
+    window.location.reload();
+  }
 
 });
