@@ -54,13 +54,3 @@ feedbackSubmit.addEventListener("click", async (e) => {
   }
   
 });
-
-const fetchFeedbacks = async () => {
-  const response  = await fetch(`${BASE_URL}/feedback/`);
-  const data = await response.json();
-
-  console.log(data);
-};
-
-
-fetchFeedbacks();
