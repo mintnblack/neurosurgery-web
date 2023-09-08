@@ -44,7 +44,7 @@
 }
 
 .blog-container-card{
-    min-width: 300px;
+    width: 300px;
 }
 
 @media screen and (max-width: 768px) {

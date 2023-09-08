@@ -136,6 +136,7 @@
           </button>
 
           <div class="blog-scroll-container" id="blogScrollContainer">
+
             <div class="blog-container-card">
               <div class="post-item blog-container-card-item">
                 <div class="post__img" style="width: 100%;">
@@ -164,6 +165,7 @@
                 </div><!-- /.post__body -->
               </div><!-- /.post-item -->
             </div><!-- /.col-lg-4 -->
+            
             <div class="blog-container-card">
               <div class="post-item blog-container-card-item">
                 <div class="post__img" style="width: 100%;">
@@ -526,19 +528,16 @@
   <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/main.js"></script>
+  <script type="module" src="assets/templates/blogs.js"></script>
 
   <script>
     const buttonRight = document.getElementById('blogScrollSlideRight');
     const buttonLeft = document.getElementById('blogScrollSlideLeft');
 
     buttonRight.onclick = function () {
-      // const right = document.getElementById("blogScrollContainer");
-      //   right.scrollBy(-200, 0);  
       document.getElementById('blogScrollContainer').scrollLeft += 300;
     };
     buttonLeft.onclick = function () {
-      // const left = document.getElementById("blogScrollContainer");
-      //   left.scrollBy(200, 0);   
       document.getElementById('blogScrollContainer').scrollLeft -= 300; 
     };
   </script>
