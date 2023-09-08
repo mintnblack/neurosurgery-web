@@ -3,7 +3,7 @@
 }
 
 .blog-scroll-arrows{
-    display: none;
+    display: inline-block;
     height: 40px;
     width: 40px;
     border-radius: 50%;
