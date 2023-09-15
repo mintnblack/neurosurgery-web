@@ -1,0 +1,32 @@
+.external-link-list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 30px;
+    padding-right: 16px;
+}
+
+.external-link h5{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.external-link a{
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    text-decoration: underline !important;
+}
+
+@media screen and (min-width: 600px) {
+    .external-link-list{
+        gap: 15px;
+    }
+    .external-link h5{
+        font-size: 14px;
+    }
+    .external-link a{
+        font-size: 12px;
+    }
+}
