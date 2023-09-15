@@ -5,12 +5,13 @@ label {
     font-weight: 700;
     line-height: 1;
     margin-bottom: 10px;
-
+    display: none !important;
     &.error {
         color: red;
         font-size: 14px;
         font-weight: 400;
         margin: 7px 0 0 0;
+        display: none !important;
     }
 }
 

@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="assets/css/libraries.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/myStyles/appointment.css">
+  <link rel="stylesheet" href="assets/myStyles/alert.css">
 </head>
 
 <body>
@@ -150,8 +151,7 @@
                     <div class="appointment_dropdown">
                       <div class="form-group">
                         <i class="icon-widget form-group-icon"></i>
-                        <p class="form-control" style="line-height: 60px; margin: 0;" id="appointment_clinic">Choose a
-                          clinic</p>
+                        <p class="form-control" style="line-height: 60px; margin: 0;" id="appointment_clinic">Choose a clinic</p>
                         <span style="visibility: hidden;" id="appointment_clinic_id"></span>
                         <div class="appointment_dropdown_content" id="appointment_dropdown_content">
                         </div>
@@ -162,7 +162,7 @@
                     <div class="form-group">
                       <i class="icon-user form-group-icon"></i>
                       <input type="text" class="form-control" placeholder="Name" id="appointment_user"
-                        name="appointment-user" required>
+                        name="appointment-user">
                     </div>
                   </div><!-- /.col-lg-12 -->
                   <!-- /.col-lg-6 -->
@@ -170,14 +170,14 @@
                     <div class="form-group">
                       <i class="icon-email form-group-icon"></i>
                       <input type="email" class="form-control" placeholder="Email" id="appointment_email"
-                        name="appointment-email" required>
+                        name="appointment-email">
                     </div>
                   </div><!-- /.col-lg-6 -->
                   <div class="col-sm-6 col-md-6 col-lg-6">
                     <div class="form-group">
                       <i class="icon-phone form-group-icon"></i>
                       <input type="text" class="form-control" placeholder="Phone" id="appointment_phone"
-                        name="appointment-phone" required>
+                        name="appointment-phone">
                     </div>
                   </div><!-- /.col-lg-6 -->
                   
@@ -218,20 +218,24 @@
                     <div class="form-group">
                       <i class="icon-phone form-group-icon"></i>
                       <input type="number" class="form-control" placeholder="Age" id="appointment_age"
-                        name="appointment-age" required>
+                        name="appointment-age">
                     </div>
                   </div><!-- /.col-lg-4 -->
                   <div class="col-sm-4 col-md-4 col-lg-4">
                     <div class="form-group form-group-date">
                       <i class="icon-calendar form-group-icon"></i>
-                      <input type="date" class="form-control" id="appointment_date" name="appointment-date" required>
+                      <input type="date" class="form-control" id="appointment_date" name="appointment-date" >
                     </div>
                   </div><!-- /.col-lg-4 -->
                   <div class="col-sm-4 col-md-4 col-lg-4">
                     <div class="form-group">
-                      <i class="icon-male form-group-icon"></i>
-                      <input type="text" class="form-control" placeholder="Gender" id="appointment_gender"
-                        name="appointment-gender" required>
+                      <i class="icon-user form-group-icon"></i>                      
+                        <select class="form-control"placeholder="Gender" id="appointment_gender" name="appointment-gender" >
+                          <option value="Gender">Gender</option>
+                          <option value="Female">Female</option>
+                          <option value="Male">Male</option>
+                          <option value="Other">Other</option>
+                        </select>
                     </div>
                   </div><!-- /.col-lg-4 -->
                   <div class="col-12">
@@ -319,12 +323,21 @@
     </footer><!-- /.Footer -->
 
     <button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
+
+    <div class="alert-container" id="alertContainer">
+      <div id="alertContent" class="alert-primary" role="alert">
+          A simple primary alert—check it out!
+        </div>
+    </div>
+
+
   </div><!-- /.wrapper -->
 
   <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script src="assets/js/plugins.js"></script>
   <script type="module" src="assets/js/main.js"></script>
   <script type="module" src="assets/templates/appointment.js"></script>
+  <script type="module" src="assets/functions/setAlertAction.js"></script>
 </body>
 
 </html>
