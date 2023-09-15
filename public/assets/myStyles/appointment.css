@@ -1,3 +1,6 @@
+#insuranceNumberInput{
+  display: none;
+}
 
 .appointment_dropdown{
     position: relative;
