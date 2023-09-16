@@ -15,6 +15,14 @@ const insuranceRadioGroup = document.getElementsByName("appointment-insurace");
 
 const clinicNames = document.getElementById("appointment_dropdown_content");
 
+appointmentClinicName.addEventListener("click", () => {
+  clinicNames.classList.toggle("visible_appointment_dropdown_content");
+});
+
+clinicNames.addEventListener("click", () => {
+  clinicNames.classList.toggle("visible_appointment_dropdown_content");
+});
+
 insuranceRadioGroup.forEach((radioButton) => {
   radioButton.addEventListener("click", () => {
     if (radioButton.value === "YES") {
@@ -41,7 +49,7 @@ const fetchAllClinicData = async () => {
 
   clinicData.forEach((clinic, index) => {
     clinicNames.innerHTML += `
-        <p onClick="onSelectClinicName(${index})" id="clinicName">${clinic.name}</p>
+        <p onClick="onSelectClinicName(${index})">${clinic.name}</p>
         `;
   });
 };

@@ -28,6 +28,10 @@
     cursor: pointer;
 }
 
-.appointment_dropdown:hover .appointment_dropdown_content{
-    display: block;
+.visible_appointment_dropdown_content{
+    display: block !important;
 }
+
+/* .appointment_dropdown:hover .appointment_dropdown_content{
+    display: block;
+} */
