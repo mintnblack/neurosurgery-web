@@ -1,5 +1,6 @@
 import { BASE_URL } from "../utils/applicationConstants.js";
 import { formatDateToDDMMYY } from "../utils/functions/dateFormatter.js";
+
 const fetchAllBlogs = async () => {
 
     const blogContainer = document.getElementById('blogContainer');
