@@ -56,14 +56,21 @@ contactFormSubmitBtn.addEventListener("click", async (e) => {
 
     console.log(data);
 
-    //   const response = await fetch(`${BASE_URL}/contact/`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // });
-
-    // console.log(response)
+      const response = await fetch(`${BASE_URL}/contact/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    if(response.status === 200){
+      setAlertAction("Message sent successfully", "success");
+      name.value = "";
+      phone.value = "";
+      email.value = "";
+      message.value = "";
+    }else{
+      setAlertAction("Something went wrong", "danger");
+    }
   }
 });
