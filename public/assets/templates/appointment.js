@@ -24,6 +24,17 @@ clinicNames.addEventListener("click", () => {
   clinicNames.classList.toggle("visible_appointment_dropdown_content");
 });
 
+const getWorkingDaysOfClinic = async (clinicId) => {
+  const response = await fetch(`${BASE_URL}/day/{clinic_id}?id=${clinicId}`);
+  const data = await response.json();
+  const clinicDays = data.data;
+  let workingDays = [];
+  clinicDays.forEach((clinicDay) => {
+    workingDays.push(clinicDay.day);
+  });
+  return workingDays;
+};
+
 insuranceRadioGroup.forEach((radioButton) => {
   radioButton.addEventListener("click", () => {
     if (radioButton.value === "YES") {
@@ -40,12 +51,18 @@ window.onSelectClinicName = async (index) => {
   document.getElementById("appointment_clinic").innerHTML =
     data.data[index].name;
   document.getElementById("appointment_clinic_id").value = data.data[index].id;
+
+  const clinicDays = await getWorkingDaysOfClinic(data.data[index].id);
+  let workingDays = "Working Days : ";
+  clinicDays.forEach((clinicDay) => {
+    workingDays += `${clinicDay}, `;
+  });
+  document.getElementById("appointmentClinicWorkingDaysPara").innerHTML = workingDays;
 };
 
 const fetchAllClinicData = async () => {
   const response = await fetch(`${BASE_URL}/clinic/`);
   const data = await response.json();
-
   const clinicData = data.data;
 
   clinicData.forEach((clinic, index) => {
@@ -57,13 +74,9 @@ const fetchAllClinicData = async () => {
 
 fetchAllClinicData();
 
-const handleValidation = async() => {
+const handleValidation = () => {
   let isValid = true;
   let insurace;
-  
-  const response = await fetch(`${BASE_URL}/day/{clinic_id}?id=${appointmentClinicId.value}`);
-  const data = await response.json();
-  const clinicDays = data.data;
 
   for (const radioButton of insuranceRadioGroup) {
     if (radioButton.checked) {
@@ -115,13 +128,8 @@ const handleValidation = async() => {
     setAlertAction("Please select date", "danger");
   } else if(date.value){
     const dayofWeek = toFindDayOfWeek(date.value);
-    let isDayAvailable = false;
-    clinicDays.forEach((clinicDay) => {
-      if (clinicDay.day === dayofWeek) {
-        isDayAvailable = true;
-      }
-    });
-    if(!isDayAvailable) {
+    const clinicWorkingDay = document.getElementById("appointmentClinicWorkingDaysPara").innerHTML;
+    if(!clinicWorkingDay.includes(dayofWeek)) {
       isValid = false;
       setAlertAction("Clinic is not availbale on this date ", "danger");
     }
@@ -142,7 +150,11 @@ bookAppointmentBtn.addEventListener("click", async (e) => {
 
     for (const radioButton of insuranceRadioGroup) {
       if (radioButton.checked) {
-        insurace = radioButton.value;
+        if(radioButton.value === "YES") {
+          insurace = true;
+        }else if (radioButton.value === "NO") {
+          insurace = false;
+        }
         break; // Exit the loop once a selected radio button is found
       }
     }
@@ -160,27 +172,28 @@ bookAppointmentBtn.addEventListener("click", async (e) => {
       authorisation: authorisation.value,
     };
 
-    console.log(data);
+    console.log(data)
 
-    // const response = await fetch(`${BASE_URL}/appointment/`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // });
+  //   const response = await fetch(`${BASE_URL}/appointment/`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(data),
+  //   });
 
-    // console.log(response)
-    // if( response.status === 200) {
-    //   setAlertAction("Appointment requested successfully", "success");
-    //   appointmentClinicName.innerHTML = "Choose a clinic";  
-    //   appointmentClinicId.value = "";
-    //   username.value = "";
-    //   email.value = "";
-    //   phone.value = "";
-    //   age.value = "";
-    //   date.value = "";
-    //   authorisation.value = "";
-    // }
+  //   console.log(response)
+  //   if( response.status === 200) {
+  //     setAlertAction("Appointment requested successfully", "success");
+  //     document.getElementById("appointmentClinicWorkingDaysPara").innerHTML = "";
+  //     appointmentClinicName.innerHTML = "Choose a clinic";  
+  //     appointmentClinicId.value = "";
+  //     username.value = "";
+  //     email.value = "";
+  //     phone.value = "";
+  //     age.value = "";
+  //     date.value = "";
+  //     authorisation.value = "";
+  //   }
   }
 });

@@ -5,6 +5,8 @@
 .appointment_dropdown{
     position: relative;
   display: block;
+  margin-bottom: 30px; 
+
 }
 
 .appointment_dropdown_content{
@@ -30,6 +32,12 @@
 
 .visible_appointment_dropdown_content{
     display: block !important;
+}
+
+#appointmentClinicWorkingDaysPara{
+  padding-left: 16px;
+  margin: 0;
+  /* display: none; */
 }
 
 /* .appointment_dropdown:hover .appointment_dropdown_content{
