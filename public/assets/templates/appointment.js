@@ -1,5 +1,6 @@
 import { BASE_URL } from "../utils/applicationConstants.js";
 import { setAlertAction } from "../functions/setAlertAction.js";
+import { toFindDayOfWeek } from "../utils/functions/dateFormatter.js";
 
 const insuranceNumberInput = document.getElementById("insuranceNumberInput");
 const appointmentClinicId = document.getElementById("appointment_clinic_id");
@@ -34,7 +35,7 @@ insuranceRadioGroup.forEach((radioButton) => {
 });
 
 window.onSelectClinicName = async (index) => {
-  const response = await fetch(`${BASE_URL}/clinic/20/1`);
+  const response = await fetch(`${BASE_URL}/clinic/`);
   const data = await response.json();
   document.getElementById("appointment_clinic").innerHTML =
     data.data[index].name;
@@ -42,7 +43,7 @@ window.onSelectClinicName = async (index) => {
 };
 
 const fetchAllClinicData = async () => {
-  const response = await fetch(`${BASE_URL}/clinic/20/1`);
+  const response = await fetch(`${BASE_URL}/clinic/`);
   const data = await response.json();
 
   const clinicData = data.data;
@@ -56,9 +57,13 @@ const fetchAllClinicData = async () => {
 
 fetchAllClinicData();
 
-const handleValidation = () => {
+const handleValidation = async() => {
   let isValid = true;
   let insurace;
+  
+  const response = await fetch(`${BASE_URL}/day/{clinic_id}?id=${appointmentClinicId.value}`);
+  const data = await response.json();
+  const clinicDays = data.data;
 
   for (const radioButton of insuranceRadioGroup) {
     if (radioButton.checked) {
@@ -108,7 +113,20 @@ const handleValidation = () => {
   } else if (date.value === "" || date.value === null) {
     isValid = false;
     setAlertAction("Please select date", "danger");
-  } else if (gender.value === "Gender") {
+  } else if(date.value){
+    const dayofWeek = toFindDayOfWeek(date.value);
+    let isDayAvailable = false;
+    clinicDays.forEach((clinicDay) => {
+      if (clinicDay.day === dayofWeek) {
+        isDayAvailable = true;
+      }
+    });
+    if(!isDayAvailable) {
+      isValid = false;
+      setAlertAction("Clinic is not availbale on this date ", "danger");
+    }
+  }
+  else if (gender.value === "Gender") {
     isValid = false;
     setAlertAction("Please select your gender", "danger");
   }
@@ -129,8 +147,6 @@ bookAppointmentBtn.addEventListener("click", async (e) => {
       }
     }
 
-    console.log(insurace, authorisation);
-
     const data = {
       age: age.value,
       clinic: appointmentClinicName.innerHTML,
@@ -146,25 +162,25 @@ bookAppointmentBtn.addEventListener("click", async (e) => {
 
     console.log(data);
 
-    const response = await fetch(`${BASE_URL}/appointment/`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    // const response = await fetch(`${BASE_URL}/appointment/`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // });
 
-    console.log(response)
-    if( response.status === 200) {
-      setAlertAction("Appointment requested successfully", "success");
-      appointmentClinicName.innerHTML = "Choose a clinic";  
-      appointmentClinicId.value = "";
-      username.value = "";
-      email.value = "";
-      phone.value = "";
-      age.value = "";
-      date.value = "";
-      authorisation.value = "";
-    }
+    // console.log(response)
+    // if( response.status === 200) {
+    //   setAlertAction("Appointment requested successfully", "success");
+    //   appointmentClinicName.innerHTML = "Choose a clinic";  
+    //   appointmentClinicId.value = "";
+    //   username.value = "";
+    //   email.value = "";
+    //   phone.value = "";
+    //   age.value = "";
+    //   date.value = "";
+    //   authorisation.value = "";
+    // }
   }
 });

@@ -17,3 +17,11 @@ export function formatDateToDDMMYY(dateString) {
 
     return formattedDate;
   }
+
+  export function toFindDayOfWeek(dateString) {
+    const date = new Date(dateString);
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayOfWeekIndex = date.getDay();
+    const dayOfWeek = weekdays[dayOfWeekIndex];
+    return dayOfWeek
+  }
