@@ -18,7 +18,7 @@ const fetchAllVideoLectures = async () => {
         <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="post-item" style="background-color: rgba(252, 247, 247, 0.2)">
           <div class="post__img">
-            <a href="blog-single-post.html">
+            <a>
             <video width="100%" height="auto" controls>
             <source src=${videos.url} type="video/mp4">
             Your browser does not support the video tag.

@@ -18,7 +18,7 @@ const fetchAllPatientLeaflets = async () => {
         <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="post-item" style="background-color: rgba(252, 247, 247, 0.2)">
           <div class="post__img">
-            <a href="blog-single-post.html">
+            <a href="case-study-single.html?caseId=${caseStudy.id}">
               <img src="assets/images/blog/grid/1.jpg" alt="post image" loading="lazy">
             </a>
           </div><!-- /.post__img -->
@@ -33,7 +33,7 @@ const fetchAllPatientLeaflets = async () => {
             <h4 class="post__title"><a href="#">${caseStudy.title}</a></h4>
 
             <p class="post__desc">${caseStudy.desc}</p>
-            <a href="blog-single-post.html" class="btn btn__secondary btn__link btn__rounded">
+            <a href="case-study-single.html?caseId=${caseStudy.id}" class="btn btn__secondary btn__link btn__rounded">
               <span>Read More</span>
               <i class="icon-arrow-right"></i>
             </a>
