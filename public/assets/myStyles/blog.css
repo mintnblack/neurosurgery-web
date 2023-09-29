@@ -1,57 +1,79 @@
-.blog-scroll-cover {
+.Blog_container{
     position: relative;
 }
 
-.blog-scroll-arrows{
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    background-color: #ccc;
-}
-
-.blog-scroll-arrows i{
-    color: var(--primary-color);
-}
-
-.blog-scroll-arrow-left {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-}
-
-.blog-scroll-arrow-right {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-}
-
-.blog-scroll-container {
-    width: calc(100% - 100px);
-    margin: auto;
+.Blog_image{
+    max-width: 600px;
     height: auto;
+    border-radius: 16px;
+    border: solid #e7ebef !important;
+}
+
+.postCategory{
+    padding: 4px 13px;
+    display: inline-block;
+    border-radius: 0 8px 8px 8px;
+    background-color: var(--primary-color);
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 6;
+    top: -15px;
+    left: 50px;
+}
+.postCategory a {
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.post__meta > * {
+    position: relative;
+    font-size: 13px;
+    color: #435ba1;
+    line-height: 1;
+    margin-right: 15px;
+    padding-right: 15px;
+}
+
+.post__meta > *:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #dedfe3;
+}
+
+/* Tags section */
+
+.blog_tag{
+    border-bottom: solid #e7ebef !important;
+    border-top: solid #e7ebef !important;
+    padding: 30px 0;
+    margin-bottom: 50px;
     display: flex;
-    gap: 10px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+    align-items: center;
+    justify-content: flex-end;
 }
 
-.blog-container-card{
-    width: 300px;
+.blog_tag_item_container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
-@media screen and (max-width: 768px) {
-    .blog-scroll-arrows{
-        display: none !important;
-    }
-    .blog-scroll-container {
-        width: 100% !important;
-    }
+.blog_tag_item{
+    display: block;
+    font-size: 14px;
+    line-height: 1;
+    text-transform: capitalize;
+    padding: 6px 10px;
+    margin: 0 10px 10px 0;
+    border-radius: 6px;
+    border: 1px solid #e6e8eb;
+    color: var(--primary-color);
+    background-color: #ffffff;
+    transition: all 0.4s ease;
 }

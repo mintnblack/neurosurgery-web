@@ -12,14 +12,15 @@ const fetchSingleBlog = async () => {
     console.log(singleBlogData)
     const date = formatDateToDDMMYY(singleBlogData.updated);
     console.log(date)
+    document.getElementById('blogImage').src = singleBlogData.image;
     document.getElementById('postDate').innerHTML = `${date.monthNameShort} ${date.day}, ${date.year}`;
-    document.getElementById('postDescription').innerHTML = singleBlogData.html;
     document.getElementById('postAuthor').innerHTML = singleBlogData.author;
     document.getElementById('postTitle').innerHTML = singleBlogData.title;
+    document.getElementById('postDescription').innerHTML = singleBlogData.html;
     const postTags = document.getElementById('postTags');
     let tagInnerHtml = '';
     singleBlogData.tags.forEach(tag => {
-        tagInnerHtml += `<li><a href="#">${tag}</a></li>`
+        tagInnerHtml += `<span class="blog_tag_item">${tag}</span>`;
     });
     postTags.innerHTML = tagInnerHtml;
 };
