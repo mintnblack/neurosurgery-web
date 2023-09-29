@@ -14,7 +14,7 @@ const fetchAllBlogs = async () => {
       const date = formatDateToDDMMYY(blog.updated);
         blogHtml += `
         <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="post-item" style="background-color: rgba(252, 247, 247, 0.2)">
+        <div class="post-item" style="background-color: rgba(252, 247, 247, 0.6)">
           <div class="post__img">
             <a href="blog-single-post.html?blogId=${blog.id}">
               <img src="assets/images/blog/grid/1.jpg" alt="post image" loading="lazy">
