@@ -177,28 +177,28 @@ bookAppointmentBtn.addEventListener("click", async (e) => {
       authorisation: authorisation.value,
     };
 
-    console.log(data)
+    // console.log(data)
 
-  //   const response = await fetch(`${BASE_URL}/appointment/`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   });
+    const response = await fetch(`${BASE_URL}/appointment/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-  //   console.log(response)
-  //   if( response.status === 200) {
-  //     setAlertAction("Appointment requested successfully", "success");
-  //     document.getElementById("appointmentClinicWorkingDaysPara").innerHTML = "";
-  //     appointmentClinicName.innerHTML = "Choose a clinic";  
-  //     appointmentClinicId.value = "";
-  //     username.value = "";
-  //     email.value = "";
-  //     phone.value = "";
-  //     age.value = "";
-  //     date.value = "";
-  //     authorisation.value = "";
-  //   }
+    console.log(response)
+    if( response.status === 200) {
+      setAlertAction("Appointment requested successfully", "success");
+      document.getElementById("appointmentClinicWorkingDaysPara").innerHTML = "";
+      appointmentClinicName.innerHTML = "Choose a clinic";  
+      appointmentClinicId.value = "";
+      username.value = "";
+      email.value = "";
+      phone.value = "";
+      age.value = "";
+      date.value = "";
+      authorisation.value = "";
+    }
   }
 });
