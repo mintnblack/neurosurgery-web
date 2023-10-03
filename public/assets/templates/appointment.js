@@ -53,9 +53,14 @@ window.onSelectClinicName = async (index) => {
   document.getElementById("appointment_clinic_id").value = data.data[index].id;
 
   const clinicDays = await getWorkingDaysOfClinic(data.data[index].id);
+
   let workingDays = "Working Days : ";
-  clinicDays.forEach((clinicDay) => {
-    workingDays += `${clinicDay}, `;
+  clinicDays.forEach((clinicDay, index) => {
+    if (index !== clinicDays.length - 1) {
+      workingDays += `${clinicDay}, `;
+    } else{
+      workingDays += `${clinicDay}`;
+    }
   });
   document.getElementById("appointmentClinicWorkingDaysPara").innerHTML = workingDays;
 };
@@ -119,7 +124,7 @@ const handleValidation = () => {
     setAlertAction("Please enter valid phone number", "danger");
   } else if (insurace === "YES" && authorisation.value === "") {
     isValid = false;
-    setAlertAction("Please enter authorisation number", "danger");
+    setAlertAction("Please enter insurance number", "danger");
   } else if (age.value === "" || age.value === null) {
     isValid = false;
     setAlertAction("Please enter your age", "danger");
