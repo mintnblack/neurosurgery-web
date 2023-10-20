@@ -32,7 +32,7 @@ const fetchAllPatientLeaflets = async () => {
             </div>
             <h4 class="post__title"><a href="#">${caseStudy.title}</a></h4>
 
-            <p class="post__desc">${caseStudy.desc}</p>
+            <p class="post__desc postDescription">${caseStudy.desc}</p>
             <a href="case-study-single.html?caseId=${caseStudy.id}" class="btn btn__secondary btn__link btn__rounded">
               <span>Read More</span>
               <i class="icon-arrow-right"></i>

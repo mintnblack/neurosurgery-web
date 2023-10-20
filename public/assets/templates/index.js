@@ -2,17 +2,17 @@ import { BASE_URL } from "../utils/applicationConstants.js";
 import { formatDateToDDMMYY } from "../utils/functions/dateFormatter.js";
 
 const fetchAllBlogs = async () => {
+  const blogContainer = document.getElementById("blogContainer");
 
-    const blogContainer = document.getElementById('blogContainer');
+  const response = await fetch(`${BASE_URL}/blog/`);
+  const data = await response.json();
+  const blogData = data.data;
+  let blogHtml = "";
 
-    const response = await fetch(`${BASE_URL}/blog/`);
-    const data = await response.json();
-    const blogData = data.data;
-    let blogHtml = "";
-
-    blogData.forEach(blog => {
+  blogData.forEach((blog, index) => {
+    if (index < 3) {
       const date = formatDateToDDMMYY(blog.updated);
-        blogHtml += `
+      blogHtml += `
         <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="post-item" style="background-color: rgba(252, 247, 247, 0.6)">
           <div class="post__img">
@@ -39,9 +39,10 @@ const fetchAllBlogs = async () => {
         </div><!-- /.post-item -->
       </div><!-- /.col-lg-4 -->
         `;
-    });
+    }
+  });
 
-    blogContainer.innerHTML = blogHtml;
+  blogContainer.innerHTML = blogHtml;
 };
 
 fetchAllBlogs();
