@@ -3,8 +3,9 @@
 }
 
 .Blog_image{
-    max-width: 600px;
+    width: 600px;
     height: auto;
+    object-fit: contain;
     border-radius: 16px;
     border: solid #e7ebef !important;
 }
@@ -87,6 +88,13 @@
 }
 
 @media  screen and (max-width: 600px) {
+    .Blog_image{
+        width: 320px;
+    }
+    .postCategory{
+        left: 25px;
+        top: -5px;
+    }
     #postTitle{
         font-size: 25px ;
     }
