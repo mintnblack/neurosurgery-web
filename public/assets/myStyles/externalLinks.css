@@ -13,9 +13,10 @@
 }
 
 .external-link a{
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
+    text-decoration: none !important;
+}
+
+.external-link a:hover{
     text-decoration: underline !important;
 }
 

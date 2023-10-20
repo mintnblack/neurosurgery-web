@@ -15,8 +15,7 @@ const fetchAllExternalLinks = async () => {
     externalLinksHtml += `
         <li>
         <div class="external-link">
-            <h5>${externallinks.title}</h5>
-            <a href=${externallinks.url}>link here</a>
+          <a href=${externallinks.url}><h5>${externallinks.title}</h5></a>
         </div>
     </li>
         `;
