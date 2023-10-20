@@ -16,7 +16,7 @@ const handleValidation = () => {
   }else if(phone.value === ""){
     isValid = false;
     setAlertAction("Please enter your phone number", "danger");
-  }else if(phone.value.length !== 10){
+  }else if(phone.value.length > 11){
     isValid = false;
     setAlertAction("Please enter valid phone number", "danger");
   }else if(phone.value.includes(" ")){
@@ -49,7 +49,7 @@ contactFormSubmitBtn.addEventListener("click", async (e) => {
   if (handleValidation()) {
     const data = {
       name: name.value,
-      phone: phone.value,
+      phone: "+44"+phone.value,
       email: email.value,
       message: message.value,
     };

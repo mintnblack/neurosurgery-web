@@ -18,7 +18,7 @@ const handleValidation = () => {
   } else if (phone.value === "") {
     isValid = false;
     setAlertAction("Please enter your phone number", "danger");
-  } else if (phone.value.length !== 10) {
+  } else if (phone.value.length > 11) {
     isValid = false;
     setAlertAction("Please enter valid phone number", "danger");
   } else if (phone.value.includes(" ")) {
@@ -56,7 +56,7 @@ feedbackSubmit.addEventListener("click", async (e) => {
       email: email.value,
       feedback: feedback.value,
       name: name.value,
-      phone: phone.value,
+      phone: "+44"+phone.value,
     };
 
     const response = await fetch(`${BASE_URL}/feedback/`, {
