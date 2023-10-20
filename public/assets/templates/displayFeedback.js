@@ -4,12 +4,8 @@ const userName = document.querySelectorAll(".testimonial__meta-title");
 const userJob = document.querySelectorAll(".testimonial__meta-desc");
 const userComments = document.querySelectorAll(".testimonial__title");
 
-console.log(userName);
-console.log(userJob);
-console.log(userComments);
-
 const fetchFeedbacks = async () => {
-  const response = await fetch(`${BASE_URL}/feedback/approved/20/1`);
+  const response = await fetch(`${BASE_URL}/feedback/approved/`);
   const data = await response.json();
   const feedbacks = data.data;
 

@@ -6,23 +6,6 @@ const email = document.getElementById("feedback-email");
 const phone = document.getElementById("feedback-phone");
 const designation = document.getElementById("feedback-designation");
 const feedback = document.getElementById("feedback-message");
-const rating = document.querySelectorAll("#stars i.fa-star");
-
-const stars = document.querySelectorAll("#stars i");
-
-stars.forEach((star, index1) => {
-  star.addEventListener("click", () => {
-    stars.forEach((star, index2) => {
-      if (index1 >= index2) {
-        star.classList.add("fa-star");
-        star.classList.remove("fa-star-o");
-      } else {
-        star.classList.add("fa-star-o");
-        star.classList.remove("fa-star");
-      }
-    });
-  });
-});
 
 const handleValidation = () => {
   let isValid = true;
@@ -59,9 +42,6 @@ const handleValidation = () => {
   } else if (feedback.value === "") {
     isValid = false;
     setAlertAction("Please enter your feedback", "danger");
-  } else if (rating.length === 0) {
-    isValid = false;
-    setAlertAction("Please enter your rating", "danger");
   }
   return isValid;
 };
@@ -77,12 +57,7 @@ feedbackSubmit.addEventListener("click", async (e) => {
       feedback: feedback.value,
       name: name.value,
       phone: phone.value,
-      rating: rating.length.toString(),
     };
-
-    console.log(data);
-
-    // post api using fetch
 
     const response = await fetch(`${BASE_URL}/feedback/`, {
       method: "POST",
