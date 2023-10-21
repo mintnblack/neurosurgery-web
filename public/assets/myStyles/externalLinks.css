@@ -1,6 +1,5 @@
 .external-link-list{
     display: flex;
-    align-items: center;
     flex-direction: column;
     gap: 20px;
     padding-left: 30px;
