@@ -336,17 +336,23 @@ $(function () {
     else if(urlObject.pathname.includes("about-us.html")){
         navLink[1].classList.add("active")
     }
-    else if(urlObject.pathname.includes("blog.html")){
+    else if(urlObject.pathname.includes("consent-forms.html")){
         navLink[2].classList.add("active")
     }
-    else if(urlObject.pathname.includes("consent-forms.html")){
+    else if(urlObject.pathname.includes("blog.html")){
         navLink[3].classList.add("active")
     }
-    else if(urlObject.pathname.includes("feedbacks.html")){
-        navLink[4].classList.add("active")
+    else if(urlObject.pathname.includes("patient-leaflets.html")){
+        navLink[3].classList.add("active")
+    }
+    else if(urlObject.pathname.includes("video-lectures.html")){
+        navLink[3].classList.add("active")
+    }
+    else if(urlObject.pathname.includes("external-links.html")){
+        navLink[3].classList.add("active")
     }
     else if(urlObject.pathname.includes("contact-us.html")){
-        navLink[5].classList.add("active")
+        navLink[4].classList.add("active")
     }
     else{
         navLink.forEach((link)=>{

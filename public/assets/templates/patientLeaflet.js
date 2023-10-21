@@ -19,7 +19,7 @@ const fetchAllPatientLeaflets = async () => {
         <div class="post-item" style="background-color: rgba(252, 247, 247, 0.6)">
           <div class="post__img">
             <a href="case-study-single.html?caseId=${caseStudy.id}">
-              <img src="assets/images/blog/grid/1.jpg" alt="post image" loading="lazy">
+              <img src=${caseStudy.image} alt="post image" loading="lazy">
             </a>
           </div><!-- /.post__img -->
           <div class="post__body">
