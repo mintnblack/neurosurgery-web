@@ -15,12 +15,14 @@ const fetchAllVideoLectures = async () => {
 
   videoLectureData.forEach((videos) => {
     const date = formatDateToDDMMYY(videos.updated);
-    const videoId = extractVideoId(videos.url);
+    const videoUrlId = extractVideoId(videos.url);
     videoLectureHtml += `
         <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="post-item" style="background-color: rgba(252, 247, 247, 0.6)">
           <div class="post__img">
-              <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg"/>
+            <a href="video-single-post.html?videoId=${videos.id}">
+              <img src="https://img.youtube.com/vi/${videoUrlId}/hqdefault.jpg"/>
+            </a>
           </div><!-- /.post__img -->
           <div class="post__body">
             <div class="post__meta-cat">
@@ -31,6 +33,10 @@ const fetchAllVideoLectures = async () => {
             </div>
             <h4 class="post__title"><a href="#">${videos.title}</a></h4>
             <p class="post__desc postDescription">${videos.desc}</p>
+            <a href="video-single-post.html?videoId=${videos.id}" class="btn btn__secondary btn__link btn__rounded">
+              <span>Read More</span>
+              <i class="icon-arrow-right"></i>
+            </a>
           </div><!-- /.post__body -->
         </div><!-- /.post-item -->
       </div><!-- /.col-lg-4 -->

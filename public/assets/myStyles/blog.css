@@ -87,15 +87,38 @@
     color: #000;
 }
 
+#videoIframe{
+    width: 100%;
+    height: 500px;
+}
+
+@media only screen and (max-width: 992px) {
+    #videoIframe{
+        width: 100%;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #videoIframe{
+        width: 100%;
+        height: 300px;
+    }
+}
+
 @media  screen and (max-width: 600px) {
     .Blog_image{
         width: 320px;
     }
     .postCategory{
         left: 25px;
-        top: -5px;
+        top: -15px;
     }
     #postTitle{
         font-size: 25px ;
+    }
+    #videoIframe{
+        width: 100%;
+        height: 250px;
     }
 }
