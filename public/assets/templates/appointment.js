@@ -62,7 +62,10 @@ window.onSelectClinicName = async (index) => {
       workingDays += `${clinicDay}`;
     }
   });
+
   document.getElementById("appointmentClinicWorkingDaysPara").innerHTML = workingDays;
+  document.getElementById("bookAppointmentClinicWebsite").href = data.data[index].link;
+  document.getElementById("WorkingDaysAndAppointmentLink").style.display = "flex";
 };
 
 const fetchAllClinicData = async () => {

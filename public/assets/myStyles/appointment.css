@@ -34,10 +34,25 @@
     display: block !important;
 }
 
+#WorkingDaysAndAppointmentLink{
+  font-size: 12px !important;
+  line-height: 20px;
+  margin-left: 16px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
 #appointmentClinicWorkingDaysPara{
-  padding-left: 16px;
   margin: 0;
   /* display: none; */
+}
+
+#bookAppointmentClinicWebsite{
+  font-weight: 500 !important;
+  color: rgb(33 52 96) !important;
+  text-decoration: underline !important;
+  cursor: pointer;
 }
 
 /* .appointment_dropdown:hover .appointment_dropdown_content{
