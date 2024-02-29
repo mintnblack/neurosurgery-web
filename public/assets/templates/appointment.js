@@ -25,7 +25,7 @@ clinicNames.addEventListener("click", () => {
 });
 
 const getWorkingDaysOfClinic = async (clinicId) => {
-  const response = await fetch(`${BASE_URL}/day/{clinic_id}?id=${clinicId}`);
+  const response = await fetch(`${BASE_URL}/day/clinic/{clinic_id}?id=${clinicId}`);
   const data = await response.json();
   const clinicDays = data.data;
   let workingDays = [];
